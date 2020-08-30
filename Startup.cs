@@ -42,7 +42,7 @@ namespace Supermarket.API
 
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseInMemoryDatabase(Configuration.GetConnectionString("memory"));
+                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             services.AddScoped<IItemRepository, ItemRepository>();

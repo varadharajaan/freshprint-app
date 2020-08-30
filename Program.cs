@@ -17,6 +17,7 @@ namespace Supermarket.API
             using (var context = scope.ServiceProvider.GetService<AppDbContext>())
             {
                 context.Database.EnsureCreated();
+                
             }
 
             host.Run();
