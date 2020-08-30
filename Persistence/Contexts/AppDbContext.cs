@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.InMemory.ValueGeneration.Internal;
 using Supermarket.API.Domain.Models;
 
 namespace Supermarket.API.Persistence.Contexts
