@@ -1,4 +1,4 @@
-namespace Supermarket.API.Domain.Models.Queries
+namespace Product.API.Domain.Models.Queries
 {
     public class Query
     {

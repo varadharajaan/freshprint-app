@@ -1,6 +1,7 @@
-using Supermarket.API.Persistence.Contexts;
 
-namespace Supermarket.API.Persistence.Repositories
+using Product.API.Persistence.Contexts;
+
+namespace Product.API.Persistence.Repositories
 {
     public abstract class BaseRepository
     {

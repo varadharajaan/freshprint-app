@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Supermarket.API.Domain.Models
+namespace Product.API.Domain.Models
 {
     public class Item
     {

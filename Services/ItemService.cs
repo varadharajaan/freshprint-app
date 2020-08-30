@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Repositories;
-using Supermarket.API.Domain.Services;
-using Supermarket.API.Domain.Services.Communication;
-using Supermarket.API.Infrastructure;
+using Product.API.Domain.Models;
+using Product.API.Domain.Repositories;
+using Product.API.Domain.Services;
+using Product.API.Domain.Services.Communication;
+using Product.API.Infrastructure;
 
-namespace Supermarket.API.Services
+
+namespace Product.API.Services
 {
     public class ItemService : IItemService
     {

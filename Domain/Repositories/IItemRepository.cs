@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Supermarket.API.Domain.Models;
+using Product.API.Domain.Models;
 
-namespace Supermarket.API.Domain.Repositories
+namespace Product.API.Domain.Repositories
 {
     public interface IItemRepository
     {

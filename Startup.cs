@@ -6,17 +6,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Supermarket.API.Controllers.Config;
-using Supermarket.API.Domain.Repositories;
-using Supermarket.API.Domain.Services;
-using Supermarket.API.Extensions;
-using Supermarket.API.Helper;
-using Supermarket.API.Persistence.Contexts;
-using Supermarket.API.Persistence.Repositories;
-using Microsoft.IdentityModel.Tokens;
-using Supermarket.API.Services;
+using Product.API.Controllers.Config;
+using Product.API.Domain.Repositories;
+using Product.API.Domain.Services;
+using Product.API.Extensions;
+using Product.API.Helper;
+using Product.API.Persistence.Contexts;
+using Product.API.Persistence.Repositories;
+using Product.API.Services;
 
-namespace Supermarket.API
+
+namespace Product.API
 {
     public class Startup
     {

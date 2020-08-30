@@ -1,10 +1,10 @@
 using AutoMapper;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Models.Queries;
-using Supermarket.API.Extensions;
-using Supermarket.API.Resources;
+using Product.API.Domain.Models;
+using Product.API.Domain.Models.Queries;
+using Product.API.Resources;
 
-namespace Supermarket.API.Mapping
+
+namespace Product.API.Mapping
 {
     public class ModelToResourceProfile : Profile
     {
@@ -12,7 +12,7 @@ namespace Supermarket.API.Mapping
         {
             CreateMap<Item, ItemResource>();
             
-            CreateMap<QueryResult<Product>, QueryResultResource<ProductResource>>();
+            CreateMap<QueryResult<Domain.Models.Product>, QueryResultResource<ProductResource>>();
         }
     }
 }

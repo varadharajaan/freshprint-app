@@ -1,10 +1,9 @@
-using Supermarket.API.Domain.Models;
 
-namespace Supermarket.API.Domain.Services.Communication
+namespace Product.API.Domain.Services.Communication
 {
-    public class ProductResponse : BaseResponse<Product>
+    public class ProductResponse : BaseResponse<Models.Product>
     {
-        public ProductResponse(Product product) : base(product) { }
+        public ProductResponse(Models.Product product) : base(product) { }
 
         public ProductResponse(string message) : base(message) { }
     }

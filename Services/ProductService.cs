@@ -1,14 +1,13 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Models.Queries;
-using Supermarket.API.Domain.Repositories;
-using Supermarket.API.Domain.Services;
-using Supermarket.API.Domain.Services.Communication;
-using Supermarket.API.Infrastructure;
+using Product.API.Domain.Models.Queries;
+using Product.API.Domain.Repositories;
+using Product.API.Domain.Services;
+using Product.API.Domain.Services.Communication;
+using Product.API.Infrastructure;
 
-namespace Supermarket.API.Services
+namespace Product.API.Services
 {
     public class ProductService : IProductService
     {
@@ -25,7 +24,7 @@ namespace Supermarket.API.Services
             _cache = cache;
         }
 
-        public async Task<QueryResult<Product>> ListAsync(ProductsQuery query)
+        public async Task<QueryResult<Domain.Models.Product>> ListAsync(ProductsQuery query)
         {
             // Here I list the query result from cache if they exist, but now the data can vary according to the item ID, page and amount of
             // items per page. I have to compose a cache to avoid returning wrong data.
@@ -39,7 +38,7 @@ namespace Supermarket.API.Services
             return products;
         }
 
-        public async Task<ProductResponse> SaveAsync(Product product)
+        public async Task<ProductResponse> SaveAsync(Domain.Models.Product product)
         {
             try
             {
@@ -64,7 +63,7 @@ namespace Supermarket.API.Services
             }
         }
 
-        public async Task<ProductResponse> UpdateAsync(int id, Product product)
+        public async Task<ProductResponse> UpdateAsync(int id, Domain.Models.Product product)
         {
             var existingProduct = await _productRepository.FindByIdAsync(id);
 

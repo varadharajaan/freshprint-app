@@ -1,14 +1,12 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Models.Queries;
-using Supermarket.API.Domain.Services;
-using Supermarket.API.Resources;
+using Product.API.Domain.Models.Queries;
+using Product.API.Domain.Services;
+using Product.API.Resources;
 
 
-namespace Supermarket.API.Controllers.v1
+namespace Product.API.Controllers.v1
 {
     [Route("/api/products")]
     [Produces("application/json")]
@@ -35,7 +33,7 @@ namespace Supermarket.API.Controllers.v1
             var productsQuery = _mapper.Map<ProductsQueryResource, ProductsQuery>(query);
             var queryResult = await _productService.ListAsync(productsQuery);
 
-            var resource = _mapper.Map<QueryResult<Product>, QueryResultResource<ProductResource>>(queryResult);
+            var resource = _mapper.Map<QueryResult<Domain.Models.Product>, QueryResultResource<ProductResource>>(queryResult);
             return resource;
         }
 
@@ -49,7 +47,7 @@ namespace Supermarket.API.Controllers.v1
         [ProducesResponseType(typeof(ErrorResource), 400)]
         public async Task<IActionResult> PostAsync([FromBody] SaveProductResource resource)
         {
-            var product = _mapper.Map<SaveProductResource, Product>(resource);
+            var product = _mapper.Map<SaveProductResource, Domain.Models.Product>(resource);
             var result = await _productService.SaveAsync(product);
 
             if (!result.Success)
@@ -57,7 +55,7 @@ namespace Supermarket.API.Controllers.v1
                 return BadRequest(new ErrorResource(result.Message));
             }
 
-            var productResource = _mapper.Map<Product, ProductResource>(result.Resource);
+            var productResource = _mapper.Map<Domain.Models.Product, ProductResource>(result.Resource);
             return Ok(productResource);
         }
 
@@ -72,7 +70,7 @@ namespace Supermarket.API.Controllers.v1
         [ProducesResponseType(typeof(ErrorResource), 400)]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveProductResource resource)
         {
-            var product = _mapper.Map<SaveProductResource, Product>(resource);
+            var product = _mapper.Map<SaveProductResource, Domain.Models.Product>(resource);
             var result = await _productService.UpdateAsync(id, product);
 
             if (!result.Success)
@@ -80,7 +78,7 @@ namespace Supermarket.API.Controllers.v1
                 return BadRequest(new ErrorResource(result.Message));
             }
 
-            var productResource = _mapper.Map<Product, ProductResource>(result.Resource);
+            var productResource = _mapper.Map<Domain.Models.Product, ProductResource>(result.Resource);
             return Ok(productResource);
         }
 
@@ -101,7 +99,7 @@ namespace Supermarket.API.Controllers.v1
                 return BadRequest(new ErrorResource(result.Message));
             }
 
-            var categoryResource = _mapper.Map<Product, ProductResource>(result.Resource);
+            var categoryResource = _mapper.Map<Domain.Models.Product, ProductResource>(result.Resource);
             return Ok(categoryResource);
         }
     }

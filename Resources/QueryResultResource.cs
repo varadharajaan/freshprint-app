@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Supermarket.API.Resources
+namespace Product.API.Resources
 {
     public class QueryResultResource<T>
     {

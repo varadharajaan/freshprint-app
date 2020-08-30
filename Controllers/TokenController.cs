@@ -1,4 +1,3 @@
-using Supermarket.API.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -8,9 +7,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Supermarket.API.Persistence.Contexts;
+using Product.API.Domain.Models;
+using Product.API.Persistence.Contexts;
 
-namespace Supermarket.API.Controllers
+namespace Product.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

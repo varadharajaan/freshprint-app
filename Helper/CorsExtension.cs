@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Supermarket.API.Helper
+namespace Product.API.Helper
 {
     public static class CorsExtension
     {

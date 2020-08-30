@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Supermarket.API.Extensions
+namespace Product.API.Extensions
 {
     public static class MiddlewareExtensions
     {

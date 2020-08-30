@@ -1,9 +1,10 @@
 using AutoMapper;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Models.Queries;
-using Supermarket.API.Resources;
+using Product.API.Domain.Models;
+using Product.API.Domain.Models.Queries;
+using Product.API.Resources;
 
-namespace Supermarket.API.Mapping
+
+namespace Product.API.Mapping
 {
     public class ResourceToModelProfile : Profile
     {
@@ -11,7 +12,7 @@ namespace Supermarket.API.Mapping
         {
             CreateMap<SaveItemResource, Item>();
 
-            CreateMap<SaveProductResource, Product>()
+            CreateMap<SaveProductResource, Domain.Models.Product>()
                 .ForMember(src => src.UnitOfMeasurement, opt => opt.MapFrom(src => (EUnitOfMeasurement)src.UnitOfMeasurement));
 
             CreateMap<ProductsQueryResource, ProductsQuery>();

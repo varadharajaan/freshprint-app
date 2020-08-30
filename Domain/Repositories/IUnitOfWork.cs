@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Supermarket.API.Domain.Repositories
+namespace Product.API.Domain.Repositories
 {
     public interface IUnitOfWork
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Dynamic;
 
-namespace Supermarket.API.Helper
+namespace Product.API.Helper
 {
     public static class DynamicExtensions
     {

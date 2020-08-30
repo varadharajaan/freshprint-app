@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Repositories;
-using Supermarket.API.Persistence.Contexts;
+using Product.API.Domain.Models;
+using Product.API.Domain.Repositories;
+using Product.API.Persistence.Contexts;
 
-namespace Supermarket.API.Persistence.Repositories
+
+namespace Product.API.Persistence.Repositories
 {
     public class ItemRepository : BaseRepository, IItemRepository
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Supermarket.API.Domain.Models
+namespace Product.API.Domain.Models
 {
     public partial class UserInfo
     {

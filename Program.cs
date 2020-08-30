@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Supermarket.API.Persistence.Contexts;
+using Product.API.Persistence.Contexts;
 
-namespace Supermarket.API
+namespace Product.API
 {
 
 #pragma warning disable CS1591

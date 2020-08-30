@@ -1,4 +1,4 @@
-namespace Supermarket.API.Infrastructure
+namespace Product.API.Infrastructure
 {
     public enum CacheKeys : byte
     {

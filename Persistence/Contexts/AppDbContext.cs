@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using Supermarket.API.Domain.Models;
+using Product.API.Domain.Models;
 
-namespace Supermarket.API.Persistence.Contexts
+namespace Product.API.Persistence.Contexts
 {
     public partial class AppDbContext : DbContext
     {
         public DbSet<Item> Items { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Domain.Models.Product> Products { get; set; }
         
         public virtual DbSet<UserInfo> UserInfo { get; set; }
 
@@ -28,16 +28,16 @@ namespace Supermarket.API.Persistence.Contexts
                 new Item { Id = 101, Name = "Dairy" }
             );
 
-            builder.Entity<Product>().ToTable("Products");
-            builder.Entity<Product>().HasKey(p => p.Id);
-            builder.Entity<Product>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Product>().Property(p => p.Name).IsRequired().HasMaxLength(50);
-            builder.Entity<Product>().Property(p => p.QuantityInPackage).IsRequired();
-            builder.Entity<Product>().Property(p => p.UnitOfMeasurement).IsRequired();
+            builder.Entity<Domain.Models.Product>().ToTable("Products");
+            builder.Entity<Domain.Models.Product>().HasKey(p => p.Id);
+            builder.Entity<Domain.Models.Product>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Domain.Models.Product>().Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<Domain.Models.Product>().Property(p => p.QuantityInPackage).IsRequired();
+            builder.Entity<Domain.Models.Product>().Property(p => p.UnitOfMeasurement).IsRequired();
 
-            builder.Entity<Product>().HasData
+            builder.Entity<Domain.Models.Product>().HasData
             (
-                new Product
+                new Domain.Models.Product
                 {
                     Id = 100,
                     Name = "Apple",
@@ -45,7 +45,7 @@ namespace Supermarket.API.Persistence.Contexts
                     UnitOfMeasurement = EUnitOfMeasurement.Unity,
                     ItemId = 100
                 },
-                new Product
+                new Domain.Models.Product
                 {
                     Id = 101,
                     Name = "Milk",

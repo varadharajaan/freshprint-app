@@ -1,15 +1,15 @@
 using System.Threading.Tasks;
-using Supermarket.API.Domain.Models;
-using Supermarket.API.Domain.Models.Queries;
-using Supermarket.API.Domain.Services.Communication;
+using Product.API.Domain.Models.Queries;
+using Product.API.Domain.Services.Communication;
 
-namespace Supermarket.API.Domain.Services
+
+namespace Product.API.Domain.Services
 {
     public interface IProductService
     {
-        Task<QueryResult<Product>> ListAsync(ProductsQuery query);
-        Task<ProductResponse> SaveAsync(Product product);
-        Task<ProductResponse> UpdateAsync(int id, Product product);
+        Task<QueryResult<Models.Product>> ListAsync(ProductsQuery query);
+        Task<ProductResponse> SaveAsync(Models.Product product);
+        Task<ProductResponse> UpdateAsync(int id, Models.Product product);
         Task<ProductResponse> DeleteAsync(int id);
     }
 }
