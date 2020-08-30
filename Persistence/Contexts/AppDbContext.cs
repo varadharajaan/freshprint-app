@@ -4,10 +4,12 @@ using Supermarket.API.Domain.Models;
 
 namespace Supermarket.API.Persistence.Contexts
 {
-    public class AppDbContext : DbContext
+    public partial class AppDbContext : DbContext
     {
         public DbSet<Item> Items { get; set; }
         public DbSet<Product> Products { get; set; }
+        
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -53,6 +55,45 @@ namespace Supermarket.API.Persistence.Contexts
                     ItemId = 101,
                 }
             );
+            
+            builder.Entity<UserInfo>(entity =>
+            {
+                entity.HasKey(e => e.UserId)
+                    .HasName("PK__UserInfo__1788CC4C1F5C1650");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+            });
+            
+            OnModelCreatingPartial(builder);
         }
+        
+          partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

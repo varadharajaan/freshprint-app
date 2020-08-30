@@ -13,6 +13,7 @@ using Supermarket.API.Extensions;
 using Supermarket.API.Helper;
 using Supermarket.API.Persistence.Contexts;
 using Supermarket.API.Persistence.Repositories;
+using Microsoft.IdentityModel.Tokens;
 using Supermarket.API.Services;
 
 namespace Supermarket.API
